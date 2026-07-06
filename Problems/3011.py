@@ -2,7 +2,6 @@
 c = []
 c.append(input())
 c.append(input())
-color = ""
 c1 = c[0]
 c2 = c[1]
 def c_ (x1,x2):
@@ -13,7 +12,7 @@ def c_ (x1,x2):
             break
     if x1 == x2 :
         color  = f"{x1}"
-    else:
+    if color != "Error":
         match x1:
             case "Red":
                 if x2 == "Yellow":
