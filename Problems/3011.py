@@ -36,3 +36,4 @@ def c_ (x1,x2):
             color = "Error"
     print(color)
 c_(input(),input())
+#40min
