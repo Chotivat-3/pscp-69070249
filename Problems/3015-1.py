@@ -10,7 +10,7 @@ def buffet ():
     out = 0
     if x_come >= y_push :
         if z_come >= x_come:
-            out += a_bt*(y_push*n_x+n_xx)
+            out += a_bt*((y_push*n_x)+n_xx)
         else:
             out += a_bt*z_come
     else:
