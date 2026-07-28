@@ -1,3 +1,6 @@
-print(10.5%1)
-a = 100 - ((20 // 2) * 5 + 10)
-print(a)
+"""SurprisingVote"""
+total = float(input())
+maximum = float(input())
+others = total - maximum
+minimum = max(0, others - maximum)
+print(minimum)
