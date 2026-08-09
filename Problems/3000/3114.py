@@ -24,7 +24,7 @@ elif HR2 < HR1 or HR1==HR2 and MI2 < MI1:
     OUT = "ERROR"
 else:
     t1,t2 = tt()
-
+    ###แปลง delta ที่จะ ปกจชติดผลลัพธ์ จะเป็น xx:xx:xx but .total_seccond() ---> xxxx.xx seconds
     minute = (t2 - t1).total_seconds()/60
 
     hr = m.ceil(minute/60)

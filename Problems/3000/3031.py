@@ -18,6 +18,5 @@ def cal (n=N,s=S,pi=PI):
         if dis%r:
             time += 1
         print(f"{time:.0f}")
-        home.clear()
         n -= 1
 cal()

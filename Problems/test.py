@@ -1,2 +1,5 @@
-for i in range(1,10):
-    print(i)
+n = 3
+while n:
+    home=input().split()
+    n-=1
+print(home)
