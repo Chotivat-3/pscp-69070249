@@ -1,5 +1,4 @@
-n = 3
-while n:
-    home=input().split()
-    n-=1
-print(home)
+x = 0
+for i in range (10):
+    x += 1
+print(x)
