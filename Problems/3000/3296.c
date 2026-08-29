@@ -1,0 +1,3 @@
+int mixColor(int c1,int c2){
+    return  c1 + c2 ;
+}
