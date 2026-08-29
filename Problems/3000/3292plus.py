@@ -6,31 +6,31 @@ def left():
     """left"""
     for i in range(N,1,-1):
         star = "*"*(i)
-        space = " "*(i)
+        space = " "*(i-1)
         print(f"{space}{star}")
     for i in range(1,N+1):
         star = "*"*(i)
-        space = " "*(i)
+        space = " "*(i-1)
         print(f"{space}{star}")
 
 def right():
     """right"""
-    for i in range(N,1,-1):
-        star = "*"*(i)
-        space = " "*(N-i)*2
+    for j in range(N,1,-1):
+        star = "*"*(j)
+        space = " "*(N-j)*2
         print(f"{space}{star}")
-    for i in range(1,N+1):
-        star = "*"*(i)
-        space = " "*(N-i)*2
+    for j in range(1,N+1):
+        star = "*"*(j)
+        space = " "*(N-j)*2
         print(f"{space}{star}")
 
-if T == "RL":
-    right()
-    left()
-if T == "LR":
-    left()
-    right()
-if T == "L":
-    left()
-if T == "R":
-    right()
+n = len(T)
+for o in range(n):
+    if T[o] == "R":
+        right()
+        if o != n-1:
+            print()
+    if T[o] == "L":
+        left()
+        if o != n-1:
+            print()
