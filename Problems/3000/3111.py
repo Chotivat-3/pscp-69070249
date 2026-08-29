@@ -15,6 +15,6 @@ elif mem == 'N' and out >= 500 :
 
 ##       กำหนดจุดปัดเศษ   2 ตำแหน่ง -> 0.01 บอกว่าจะปัดขึ้น
 
-out = out.quantize(Decimal("0.01"),rounding=ROUND_HALF_UP)#ตรงนี้ๆ!
+out = out.quantize(Decimal("0.01"),ROUND_HALF_UP)#ตรงนี้ๆ!
 
 print(f"{out:.2f}")

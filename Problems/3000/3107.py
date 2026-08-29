@@ -21,17 +21,19 @@ out += posit()
 def bonus(d,w=WAGE,s=SALARY):
     """bonus!!"""
     b_out = 0
-    if w < 5:
+    if w <= 5:
         b_out += s*d[1]
     elif w <= 10:
         b_out += s*d[2]
     elif w > 10:
         b_out += s*d[3]
     return b_out
+
 if POSIT == "M":
     out += bonus(DM)
 elif POSIT == "B":
     out += bonus(DB)
 elif POSIT == "G":
     out += bonus(DG)
+
 print(f"{out:.0f}")
