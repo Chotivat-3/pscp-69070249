@@ -10,7 +10,8 @@ def x(k,n=num):
     """x-shape"""
     run = k
     if run > 126 :
-        run -= 126-32
+        run -= 126
+        run += 32
     for i in range(1,n+1):
         out = ''
         if not n%2 and i == mid+1:
