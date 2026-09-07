@@ -32,20 +32,15 @@ def x(k,n=num):
         print(out)
         if not n%2 and i == mid:
             print(out)
-        #print("run =", run, i)
 if kit != "#":
     st = ord(kit)+ mid
     x(st)
 else:
     for z in range(1,num+1):
         htout = ''
-        if not num%2 and z == mid+1:
-            continue
         for y in range(1,num+1):
             if z in (y,num+1-y) :
                 htout += "#"
             else:
                 htout += "-"
         print(htout)
-        if not num%2 and z == mid:
-            print(htout)
