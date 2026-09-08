@@ -18,7 +18,12 @@ elif n > 10:
 else:
     out += n*5
 
-out += (out*7)/100#VAT
-out += n*0.5#FT
+out *= 100
+vat = (out*7/10000)*100
+ft = n*100//2
 
-print(f"{out:.1f}")
+out = out + vat + ft
+rm = int(out%100//10)
+out = int(out//100)
+
+print(f"{out}.{rm}")
