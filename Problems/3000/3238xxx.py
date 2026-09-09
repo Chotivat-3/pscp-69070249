@@ -9,3 +9,7 @@ if k == "#":
             else:
                 print("-",end="")
         print()
+else:
+    start = ord(k)+(x/2)
+    if start > 126:
+        start = start - 126 + 32
