@@ -1,12 +1,15 @@
 """KERORO"""
 x, y = map(int,input().split())
+dis = x
+n = 1
 
-if not x%2:
-    n = (x+2)/2
-    xn = 0
-else:
-    n = (x+1)/2
-    xn = 1
-
-dis = n/2*(x+xn)
-
+while True:
+    if dis >= y:
+        print(n)
+        break
+    if x <= 0:
+        print(-1)
+        break
+    x -= 2
+    dis += x
+    n += 1
