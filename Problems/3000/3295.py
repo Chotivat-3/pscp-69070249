@@ -19,11 +19,12 @@ else:
     out += n*5
 
 out *= 100
-vat = (out*7/10000)*100
-ft = n*100//2
+out = int(out)
+out += (out*700)//10000
+out += int((n*0.5)*100)
 
-out = out + vat + ft
-rm = int(out%100//10)
-out = int(out//100)
+if int(str(out)[-1]) >= 5:
+    out += 10
+out //= 10
 
-print(f"{out}.{rm}")
+print(f"{out//10}.{out%10}")

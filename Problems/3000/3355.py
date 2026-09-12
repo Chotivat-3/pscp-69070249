@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 '''short'''
 nl=[]
 out = ''
@@ -35,3 +36,22 @@ else:
             print(out[i],end=", ")
         else:
             print(out[i],end="")
+=======
+"""REDUCE"""
+t = []
+out = []
+while True:
+    x = int(input())
+    if x != -1:
+        t.append(x)
+    else:
+        break
+n = len(t)
+
+for i in range(n):
+    if i:
+        if t[i] - t[i-1] > 1 :
+            out.append(t[i])
+
+print(t, out)
+>>>>>>> 97cb694942951e23407b10d2facdd9b05d5aa456
