@@ -2,45 +2,18 @@
 num, kit = input().split()
 num = int(num)
 
-mid = num//2
-if num%2 :
-    mid += 1
-
-def x(k,n=num):
-    """x-shape"""
-    run = k
-    if run > 126 :
-        run -= 126
-        run += 32
-    for i in range(1,n+1):
-        out = ''
-        if not n%2 and i == mid+1:
-            continue
-        if i <= mid:
-            run -= 1
-            if run < 33 :
-                run = 126
-        if i > mid:
-            run += 1
-            if run > 126:
-                run = 33
-        for j in range(1,n+1):
-            if i in (j,n+1-j) :
-                out += chr(run)
+for i in range(num):
+    for j in range(num):
+        if kit == "#":
+            if j in (i,num-1-i):
+                print(kit,end='')
             else:
-                out += "-"
-        print(out)
-        if not n%2 and i == mid:
-            print(out)
-if kit != "#":
-    st = ord(kit)+ mid
-    x(st)
-else:
-    for z in range(1,num+1):
-        htout = ''
-        for y in range(1,num+1):
-            if z in (y,num+1-y) :
-                htout += "#"
+                print('-',end='')
+        else:
+            if j in (i,num-1-i):
+### ตรงนี้ คือ ระยะห่าง ระหว่าง i ถึง จุดกึ่งกลาง เพราะมันจะเพิ่มลด ตาม ตำแหน่ง i
+## ที่เปลี่นไป เป็นลูกเล่นที่มองไม่ออก
+                print(chr(ord(kit)+abs(i-num//2)),end='')
             else:
-                htout += "-"
-        print(htout)
+                print('-',end='')
+    print()
