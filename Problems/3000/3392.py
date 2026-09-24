@@ -1,35 +1,24 @@
 """ HA HA HA """
 
+arr = [0]*3
 x, y, z = int(input()), int(input()), int(input())
-
-t = [x, y, z]
-tall = []
+arr[0], arr[1], arr[2] = x, y, z
 
 for i in range(3):
-    j = t[:]
-    if not i :
-        j.sort(reverse=True)
-        tall.append(j)
-    elif i == 1:
-        tall.append(j)
-    else:
-        j.sort()
-        tall.append(j)
+    print(f'Input number {i+1} stored.')
 
-key = []
 while True:
-    n = int(input())
-    if not n :
+    key = int(input())
+    if not key:
         break
-    key.append(n-1)
-
-n=len(key)
-
-for i in range(n):
-    print(f'Input number {key[i]+1} stored.')
-    if not key[i]:
-        print( f"Descending order: {" ".join(list(map(str,tall[key[i]])))}" )
-    elif key[i] == 1:
-        print( f"Original order: {" ".join(list(map(str,tall[key[i]])))}" )
+    if key == 1:
+        print(f"Original order: {arr[0]} {arr[1]} {arr[2]}")
+    elif key == 2:
+        x = arr[:]
+        x.sort(reverse=True)
+        print(f"Descending order: {' '.join(map(str, x))}")
     else:
-        print( f"Ascending order: {" ".join(list(map(str,tall[key[i]])))}" )
+        x = arr[:]
+        x.sort()
+        print(f"Ascending order: {' '.join(map(str, x))}")
+
