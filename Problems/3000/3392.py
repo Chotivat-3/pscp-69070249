@@ -1,11 +1,10 @@
 """ HA HA HA """
 
-arr = [0]*50
+arr = [0]*3
 x, y, z = int(input()), int(input()), int(input())
-put = (x, y, z)
+arr[0], arr[1], arr[2] = x, y, z
 
 for i in range(3):
-    arr[i]= put[i]
     print(f'Input number {i+1} stored.')
 
 while True:
@@ -15,12 +14,11 @@ while True:
     if key == 1:
         print(f"Original order: {arr[0]} {arr[1]} {arr[2]}")
     elif key == 2:
-        x = arr[:3]
+        x = arr[:]
         x.sort(reverse=True)
-        x = list(map(str,x))
-        print(f"Descending order: {' '.join(x)}")
+        print(f"Descending order: {' '.join(map(str, x))}")
     else:
-        x = arr[:3]
+        x = arr[:]
         x.sort()
-        x = list(map(str,x))
-        print(f"Ascending order: {' '.join(x)}")
+        print(f"Ascending order: {' '.join(map(str, x))}")
+
