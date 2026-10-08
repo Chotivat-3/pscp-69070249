@@ -1,30 +1,22 @@
 '''Muddled Menu'''
 oder_list = []
-num = []
+menu, num = '',''
 while True:
-    menu = input()
-    if menu == 'DONE':
+    put = input()
+    if '#' in put:
+        menu, num = put.rsplit(" #")
+    if put == 'DONE':
         break
-    elif menu ==  "SOMETHING'S WRONG":
+    if put == 'CLOSED':
         oder_list.clear()
-    elif 'Can\'t do:' in menu:
-        num.pop(oder_list.index(menu[10:]))
-        oder_list.remove(menu[10:])
-    else:
-        oder_list.append(menu[:len(menu)-3])
-        num.append(menu[-1])
-n = len(oder_list)
-out = []
-for i in range(n):
-    out.append([oder_list[i],num[i]])
+        break
+    if put ==  "SOMETHING'S WRONG":
+        oder_list.clear()
+    elif 'Can\'t do:' in put:
+        oder_list.remove(put[10:])
+    elif num.isdigit():
+        oder_list.insert(int(num)-1,menu)
+    elif num == 'N':
+        oder_list.append(menu)
 
-def sot(x):
-    x = x[1]
-    if x == 'N':
-        x == 999**999
-    else:
-        x = int(x)
-    return x
-
-print(oder_list, num)
-print(out.sort(key=sot))
+print('Full Course:', oder_list, 'Reversed:', oder_list[::-1])
