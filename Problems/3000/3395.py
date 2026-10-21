@@ -1,16 +1,16 @@
-'''เข้าแถว'''
-
 n, l = map(int,input().split())
-q = list(map(int,input().split()))
-t = list(map(int,input().split()))
-spc = []
-for i in t:
-    spc.append(q[i-1])
-
+n_box = list(map(int,input().split()))
+l_box = list(map(int,input().split()))
 for i in range(l):
-    if not i:
-        print(i)
-    elif max(q[:q.index(spc[i])]) >= spc[i]:
-        print(max(q[:q.index(spc[i])]) - spc[i] + 1)
+    pos = l_box[i] - 1
+    if pos <= 0:
+        print(0)
+        continue
+    who = n_box[pos]
+    tall = max(n_box[:pos])
+    if who <= tall:
+        print(tall - who + 1)
+    else:
+        print(0)
     else:
         print(0)

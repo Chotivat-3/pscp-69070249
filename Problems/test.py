@@ -1,6 +1,10 @@
-c = list(map(float,input().split()))
-c = list(map(lambda x: x*10, c))
-c = list(map(int,c))
-tpc = {1:[c[0],'Plastic'],2:[c[1],'Can'],3:[c[2],'Glass']}
-for i in tpc:
-    print(i)
+a  = 'aa #1'
+out = []
+pit = -1
+for i in a:
+    pit += 1
+    if i.isdigit() or i == 'N':
+        break
+out.append(a[:pit-2])
+out.append(a[pit:])
+print(out)

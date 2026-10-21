@@ -1,15 +1,21 @@
 '''Give U'''
-
+# รับค่าเข้ามา
 n, s = map(int,input().split())
-student = {}
+student = {}# dict สำหรับ เก็บข้อมูลว่า นักเรียนแต่ละคนจะส่งให้ใคร
 for i in range(n):
-    student[i+1]=int(input())
+    student[i+1]=int(input())# เป็นการเพิ่มค่าใน dict ไล่่ไป คนที่ เป็น key ส่วนส่งให้ใครเป็น value
+# ตอนนี้ก็จะมีdict หน้าตาประมาณนี้ { x1:y1, x2:y2 ,...} x = ลำดับ y = คนที่ส่งให้
 
-whogive = [s]
+whogive = [s]# อันนี้เป็น ลิสต์ของคนที่ได้รับข้อความ
 
-for i in range(1,n+1):
-    if student[whogive[i-1]] and student[whogive[i-1]] not in whogive :
-        whogive.append(student[whogive[i-1]])
+for i in range(n):# เราก็จะเริ่มจาก นักเรียนคนแรก ที่ได้รับข้อความ โดย การ จะเรียกค่ามาว่าเขาคนนั้นส่งให้ใคร
+    if student[whogive[i]] and student[whogive[i]] not in whogive :
+    # ตรง studet[key] --> เราใช้  whogive เป็น key ในการเรียก โดย ที่เราเรียก whogive ตาม index เริ่มจาก 0 ไปเรื่อยๆ
+    # ตรงนี้เราจะเช็คว่า ที่นักเรียนคนที่ whogive[i] เนี่ย จะส่งให้ใครไหม แล้ว ส่งให้ซ้ำรึเปล่า ถ้าไม่เราจะเพิ่มค่า เข้าไปใน whogive กลายเป็oว่าคนนั้นจะได้รับข้อความ
+    # ต่อมาเราจะวนต่อไปที่ whogive คนถัดไปแล้วดูว่า เขาส่งให้ใคร วนต่อไปเรื่อย ๆ
+        whogive.append(student[whogive[i]])
     else:
         break
+#สรุปก็คือใช้ dict ในการเก็บข้อมูลลำดับนักเรียนและคนที่นักเรียนในลำดับนั้น ๆ จะส่งไปให้
+#ใช้ลิสต์ในการเก็บค่า ข้อมูล ว่า มีนักเรียนคนไหน ได้ รับข้อความบ้าง และใช้เป็น key ในการ รัน dict
 print(len(whogive))
