@@ -8,3 +8,4 @@ def password(x1,x2,x3):
     else:
         print(f"{x1[0]}{x3}{x2[-1]}")
 password(input(),input(),input())
+
