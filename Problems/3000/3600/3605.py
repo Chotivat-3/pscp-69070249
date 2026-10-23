@@ -1,0 +1,3 @@
+'''max'''
+N = [int(input()) for _ in range(8)]
+print(max(N))
